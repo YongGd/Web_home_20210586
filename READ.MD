@@ -38,3 +38,8 @@ This project is a starting point for a Web application.
 
 공부 내용 => 블로그 티스토리 정리
 주소 : https://yongdiary02.tistory.com/30   
+
+## 자바웹프로그래밍 05_02 - 화살표 함수, 로그인 창 구현 공부 완료
+
+공부 내용 => 블로그 티스토리 정리
+주소 : https://yongdiary02.tistory.com/36
