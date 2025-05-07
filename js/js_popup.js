@@ -4,15 +4,15 @@ clearTimeout(close_time); // 재호출 정지
 close_time= setTimeout("close_window()", 10000);
 // 1/1000 초 지정, 바로 시작
 show_time(); // 실시간 시간 보여주기
-function show_time(){
-    let divClock = document.getElementById('Time');
-    divClock.innerText = close_time2; // 10초 삽입 시작
-    close_time2--; // 1초씩 감소
-    setTimeout(show_time, 1000); //1초마다 갱신
-    }
-function close_window() { // 함수 정의
-    window.close(); // 윈도우 닫기
-    }               //윈도우 창을 다 닫아버려서서 js 파일을 하나 더 만들어야할듯. 인덱스에서도 js을 호출하기때문에
+// function show_time(){
+//     let divClock = document.getElementById('Time');
+//     divClock.innerText = close_time2; // 10초 삽입 시작
+//     close_time2--; // 1초씩 감소
+//     setTimeout(show_time, 1000); //1초마다 갱신
+//     }
+// function close_window() { // 함수 정의
+//     window.close(); // 윈도우 닫기
+//     }               //윈도우 창을 다 닫아버려서서 js 파일을 하나 더 만들어야할듯. 인덱스에서도 js을 호출하기때문에
 
 function setCookie(name, value, expiredays) {
     var date = new Date();
