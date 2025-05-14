@@ -28,7 +28,7 @@ function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
 function setCookie(name, value, expiredays) {
         var date = new Date();
         date.setDate(date.getDate() + expiredays);
-        document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "; path=/";SameSite=None; Secure;
+        //document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "; path=/";SameSite=None; Secure;
         }
     
 function getCookie(name) {
@@ -49,20 +49,25 @@ function getCookie(name) {
 
 const check_input = () => {
         const loginForm = document.getElementById('login_form');
-        const loginBtn = document.getElementById('login_btn');
+        const loginbtn = document.getElementById('login_btn');
         const emailInput = document.getElementById('typeEmailX');
         const passwordInput = document.getElementById('typePasswordX');
         const c = '아이디, 패스워드를 체크합니다';
     alert(c);
         const emailValue = emailInput.value.trim();  //trim 공백 제거 값만 추출.
         const passwordValue = passwordInput.value.trim();
-        const sanitizedPassword = check_xss(passwordInput);
-        // check_xss 함수로 비밀번호 Sanitize
-        const sanitizedEmail = check_xss(emailInput);
+        const sanitizedEmail = check_xss(emailValue);
+        const sanitizedPassword = check_xss(passwordValue);
         // check_xss 함수로 비밀번호 Sanitize
         
         // 전역 변수 추가, 맨 위 위치
         const idsave_check = document.getElementById('idSaveCheck');
+        const payload = {
+            id: emailValue,
+            exp: Math.floor(Date.now() / 1000) + 3600 // 1시간 (3600초)
+        };
+        const jwtToken = generateJWT(payload);
+            
     // 검사 마무리 단계 쿠키 저장, 최하단 submit 이전
             if(idsave_check.checked == true) { // 아이디 체크 o
                 alert("쿠키를 저장합니다.", emailValue);
@@ -115,11 +120,22 @@ const check_input = () => {
 
         console.log('이메일:', emailValue);
         console.log('비밀번호:', passwordValue);
+
         session_set(); // 세션 생성 
+        localStorage.setItem('jwt_token', jwtToken);
         loginForm.submit();
     };
 
-    document.getElementById("login_btn").addEventListener('click', check_input);
+document.getElementById("login_btn").addEventListener('click', check_input);
 function logout(){
         session_del(); // 세션 삭제
 }
+
+function init_logined(){
+    if(sessionStorage){
+    decrypt_text(); // 복호화 함수
+    }
+    else{
+    alert("세션 스토리지 지원 x");
+    }
+    }
