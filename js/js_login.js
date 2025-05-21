@@ -1,3 +1,7 @@
+import { session_set, session_get, session_check } from './js_session.js';
+import { encrypt_text, decrypt_text } from './js_crypto.js';
+import { generateJWT, checkAuth } from './js_jwt_token.js';
+
 const check_xss = (input) => {
     // DOMPurify 라이브러리 로드 (CDN 사용)
     const DOMPurify = window.DOMPurify;
@@ -13,17 +17,25 @@ const check_xss = (input) => {
     return sanitizedInput;
     };
 
-function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
-        const emailInput = document.getElementById('typeEmailX');
-        const idsave_check = document.getElementById('idSaveCheck');
-        let get_id = getCookie("id");
-        if(get_id) {
-            emailInput.value = get_id;
-            idsave_check.checked = true;
-            }
-        session_check(); // 세션 유무 검사
 
-        }
+    
+// function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
+        
+//         const emailInput = document.getElementById('typeEmailX');
+//         const idsave_check = document.getElementById('idSaveCheck');
+//         let get_id = getCookie("id");
+//         if(get_id) {
+//             emailInput.value = get_id;
+//             idsave_check.checked = true;
+//             }
+//         session_check(); // 세션 유무 검사
+
+//         }
+    document.addEventListener('DOMContentLoaded', () => {
+        //init();
+        checkAuth();
+        init_logined();
+        });
 
 function setCookie(name, value, expiredays) {
         var date = new Date();
@@ -116,6 +128,7 @@ const check_input = () => {
         // Sanitize된 비밀번호 사용
         return false;
         }
+    else {}
 
 
         console.log('이메일:', emailValue);
