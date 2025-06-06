@@ -11,7 +11,7 @@ function join(){ // 회원가입 기능
     let re_password = document.querySelector("#form3Example4cd");
     let agree = document.querySelector("#form2Example3c");
 
-    form.action = "../index.html"; // 로그인 성공 시 이동
+    form.action = "../index_login.html"; // 로그인 성공 시 이동
 
     form.method = "get"; // 전송 방식
 
