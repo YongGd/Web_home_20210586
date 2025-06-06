@@ -48,3 +48,23 @@ This project is a starting point for a Web application.
 
 공부 내용 => 블로그 티스토리 정리
 주소 : https://yongdiary02.tistory.com/37
+
+## 자바웹프로그래밍 06_06 - 쿠키(ID저장) , 세션 , xss 공격 팝업이 계속해서 뜬다면? 공부 완료
+
+공부 내용 => 블로그 티스토리 정리
+주소 : https://yongdiary02.tistory.com/38
+
+## 자바웹프로그래밍 06_06 - 암호화,JWT 보안토큰 공부 완료
+
+공부 내용 => 블로그 티스토리 정리
+주소 : https://yongdiary02.tistory.com/39
+
+## 자바웹프로그래밍 06_06 - 모듈화,회원가입 만들기 공부 완료
+
+공부 내용 => 블로그 티스토리 정리
+주소 : https://yongdiary02.tistory.com/40
+
+## 자바웹프로그래밍 06_06 - 프로필 구현,지도서비스 구현 공부 완료
+
+공부 내용 => 블로그 티스토리 정리
+주소 : https://yongdiary02.tistory.com/41
