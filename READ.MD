@@ -1,7 +1,7 @@
 # HTML 프로젝트 - 깃허브
 새로운 시작! 웹 서비스 개발의 세계로 떠나보아요~
 ## Getting Started
-This project is a starting point for a Web application.
+This project is a starting point for a Web application
 - [프로젝트 메인 주소](https://github.com/YongGd/WEB_MAIN_20210586)
 
 ## 자바웹프로그래밍 03_22 - 사이트 만들기 공부 완료 
